@@ -24,14 +24,14 @@ public class UserController {
         return new ResponseEntity<>(userService.createUser(dto), HttpStatus.CREATED);
     }
 
-    //request to block a specified user
+    //request to block specified user
     @PostMapping("/block/{id}")
     public ResponseEntity<String> blockUser(@PathVariable(name = "id") Long id) {
         userService.blockUser(id);
         return new ResponseEntity<>("User with id= "+ id + " blocked", HttpStatus.OK);
     }
 
-    //this endpoint returns information about the user's tariff, payment period, payment method and the date when the mentioned tariff was firstly applied by user
+    //this endpoint returns information about the user's tariff, payment period, payment method and the date when the mentioned tariff was firstly applied by the user
     @GetMapping("/getTariff/{userId}")
     public ResponseEntity<UserTariffDTO> getUserTariff(@PathVariable(name = "userId") Long userId) {
         return new ResponseEntity<>(userService.getUserTariff(userId), HttpStatus.OK);

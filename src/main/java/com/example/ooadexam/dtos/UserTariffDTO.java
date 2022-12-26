@@ -16,19 +16,14 @@ import java.util.Date;
 @NoArgsConstructor
 public class UserTariffDTO {
 
-    @NotNull
     private Long userId;
 
-    @NotNull
     private Long tariffId;
 
-    @NotNull
     private PaymentMethod paymentMethod;
 
-    @NotNull
     private PaymentPeriod paymentPeriod;
 
-    @NotNull
     private Date startDate;
 
 }

@@ -18,7 +18,7 @@ public class UserBillController {
     private final UserBillService userBillService;
 
     //bill formation request for particular user
-    //bill (invoice) is formed based on user's data from db
+    //bill (invoice) is formed based on the user's data from db
     @PostMapping("/create/{userId}")
     public ResponseEntity<UserBillDTO> createUserBill(@PathVariable(name = "userId") Long userId) {
         return new ResponseEntity<>(userBillService.createBill(userId), HttpStatus.CREATED);
